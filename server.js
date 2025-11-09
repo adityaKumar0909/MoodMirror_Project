@@ -62,17 +62,28 @@ app.post('/analyze', async (req, res) => {
         );
         console.log("✅ Topic response received");
 
-        const topicData = topicResponse.data;
+                const topicData = topicResponse.data;
         console.log("📊 Raw topic data:", JSON.stringify(topicData, null, 2));
 
-        const topics = (topicData.labels && topicData.scores)
-            ? topicData.labels.map((label, i) => ({ label, score: topicData.scores[i] }))
+        let topics = [];
+
+        if (Array.isArray(topicData)) {
+            // ✅ New format: array of { label, score }
+            topics = topicData
                 .sort((a, b) => b.score - a.score)
                 .slice(0, 3)
-                .map(x => x.label)
-            : [];
+                .map(item => item.label);
+        } else if (topicData.labels && topicData.scores) {
+            // ✅ Old format: object with arrays
+            topics = topicData.labels
+                .map((label, i) => ({ label, score: topicData.scores[i] }))
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 3)
+                .map(x => x.label);
+        }
 
         console.log("🏷️ Top topics:", topics);
+
 
         res.json({
             emotion: { sentiment: emotion },
