@@ -1,0 +1,14 @@
+{
+  "name": "tweet-sentiment-analyzer",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  }
+}

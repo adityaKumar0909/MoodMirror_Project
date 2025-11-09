@@ -1,0 +1,67 @@
+.sentiment-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.sentiment-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+.sentiment-tag.emotion {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.sentiment-tag.topic {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.sentiment-tag.joy,
+.sentiment-tag.happiness {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.sentiment-tag.anger {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.sentiment-tag.sadness {
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.sentiment-tag.fear {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #333;
+}
+
+.sentiment-tag.surprise {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
+}
+
+.sentiment-tag.disgust {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  color: #333;
+}
+
+.sentiment-tag.neutral {
+  background: linear-gradient(135deg, #e0e0e0 0%, #b0b0b0 100%);
+  color: #333;
+}
+
+.sentiment-loading {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  background: rgba(100, 100, 100, 0.2);
+  color: #666;
+  font-style: italic;
+}
